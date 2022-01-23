@@ -1,0 +1,43 @@
+from setuptools import find_packages, setup
+from importlib import import_module
+
+install_requires = []
+
+dev_requires = [
+    "autoflake~=1.4",
+    "autopep8~=1.5",
+    "black~=19.10b0",
+    "coverage~=4.5",
+    "coverage-badge~=1.0",
+    "flake8~=3.9",
+    "isort~=5.9",
+    "pytest~=6.2",
+    "pytest-mock~=3.6",
+    "pip-tools~=6.2",
+    "wheel~=0.37",
+    "twine~=3.4",
+]
+
+
+def get_version():
+    return import_module("{{ cookiecutter.project_slug }}.__version__").__version__
+
+
+setup(
+    name="{{ cookiecutter.project_slug }}",
+    version=get_version(),
+    url="https://github.com/adeptex/{{ cookiecutter.project_slug }}",
+    author="{{ cookiecutter.author }}",
+    author_email="{{ cookiecutter.email }}",
+    description="",
+    long_description="",
+    long_description_content_type="text/markdown",
+    packages=find_packages(),
+    include_package_data=True,
+    platforms="any",
+    install_requires=install_requires,
+    setup_requires=["pytest-runner"],
+    tests_require=dev_requires,
+    extras_require={"dev": dev_requires},
+    entry_points={"console_scripts": ["{{ cookiecutter.project_slug }}={{ cookiecutter.project_slug }}.main:main"]},
+)
