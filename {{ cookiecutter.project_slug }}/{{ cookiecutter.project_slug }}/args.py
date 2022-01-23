@@ -1,5 +1,6 @@
 import logging
 from argparse import ArgumentParser, Namespace
+from os import makedirs
 from pathlib import Path
 from sys import argv
 from typing import List
@@ -33,6 +34,7 @@ def parse_args(arguments: List = argv[1:]) -> Namespace:
         args.input = load_json_from_file(args.input)
 
     if args.output:
+        makedirs(args.output, mode=0o700, exist_ok=True)
         args.output = Path(args.output)
 
     return args
