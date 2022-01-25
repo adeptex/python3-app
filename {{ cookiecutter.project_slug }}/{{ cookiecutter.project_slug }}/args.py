@@ -11,7 +11,7 @@ from {{cookiecutter.project_slug}}.utils import load_json_from_file
 
 def argument_parser() -> ArgumentParser:
     """CLI argument parser"""
-    args_parser = ArgumentParser("{{ cookiecutter.project_slug }}", description=("python3-app"))
+    args_parser = ArgumentParser("{{ cookiecutter.project_slug }}", description=("{{ cookiecutter.project_slug }}"))
     args_parser.add_argument("-V", "--version", action="version", version=__version__)
     args_parser.add_argument("-i", "--input", default=None, help="Input file")
     args_parser.add_argument("-o", "--output", default=None, help="Output directory")
