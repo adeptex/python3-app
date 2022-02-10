@@ -5,7 +5,7 @@ from typing import Callable
 
 
 @dataclass
-class Asdf:
+class Model:
     """Definition"""
 
     name: str  # Unique identifier
