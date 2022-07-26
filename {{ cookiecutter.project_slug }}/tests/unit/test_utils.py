@@ -21,7 +21,8 @@ def test_load_json_from_file():
 
 
 @pytest.mark.parametrize(
-    ("filename", "expected"), [(None, {}), ("tests/fixtures/config.yml", safe_load(open("tests/fixtures/config.yml")))],
+    ("filename", "expected"),
+    [(None, {}), ("tests/fixtures/config.yml", safe_load(open("tests/fixtures/config.yml")))],
 )
 def test_load_yaml_file(filename, expected):
     result = load_yaml_file(filename)

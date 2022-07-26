@@ -13,7 +13,11 @@ def argument_parser() -> ArgumentParser:  # pragma: no cover
     args_parser.add_argument("-o", "--output", default=None, help="output filename")
     args_parser.add_argument("-l", "--log", default=None, help="log filename")
     args_parser.add_argument(
-        "--debug", action="store_const", const=logging.DEBUG, default=logging.INFO, help="show debug log",
+        "--debug",
+        action="store_const",
+        const=logging.DEBUG,
+        default=logging.INFO,
+        help="show debug log",
     )
     args_parser.add_argument("--version", action="version", version=__version__, help="show version and exit")
     return args_parser

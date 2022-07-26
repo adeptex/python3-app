@@ -6,12 +6,12 @@ install_requires = ["yaml"]
 dev_requires = [
     "autoflake~=1.4",
     "autopep8~=1.5",
-    "black~=19.10b0",
-    "coverage~=4.5",
+    "black~=22.6",
+    "coverage~=6.4",
     "coverage-badge~=1.0",
     "flake8~=3.9",
     "isort~=5.9",
-    "pytest~=6.2",
+    "pytest~=7.1",
     "pip-tools~=6.2"
 ]
 
