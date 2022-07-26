@@ -1,8 +1,10 @@
 import json
-import re
+import logging
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Optional, Pattern
+from typing import Any, Dict, Optional
+
+from yaml import safe_load
 
 
 def today() -> str:
@@ -11,25 +13,22 @@ def today() -> str:
     return f"{today.year}-{today.month:02d}-{today.day:02d}"
 
 
-def load_json_from_file(filename: str = None) -> Dict:
-    """Load JSON data from a file"""
+def load_yaml_file(filename: Optional[str] = None) -> Dict:
+    """Load configuration file."""
+    if not filename:
+        return {}  # empty
+
+    logging.info(f"Loading YAML file '{filename}'...")
+    return safe_load(open(filename))
+
+
+def load_json_file(filename: str) -> Dict:
+    """Load JSON data from a file."""
+    logging.info(f"Loading JSON file '{filename}'...")
     return json.loads(Path(filename).read_text())
 
 
-def load_regex(regex: str, flags: Optional[re.RegexFlag] = 0) -> Pattern:
-    """Try to compile a regex statement"""
-    try:
-        return re.compile(regex, flags=flags)
-
-    except re.error:
-        raise ValueError(f"Failed compiling RegEx: {regex}")
-
-
-def printer(obj: object, filepath: Path = None) -> None:
-    """Print to file or screen"""
-    data = str(obj)
-
-    if filepath:
-        filepath = filepath.open("w")
-
-    print(data, file=filepath)
+def save_json_file(filename: str, data: Any) -> None:
+    """Save data to a file."""
+    logging.info(f"Saving JSON file '{filename}'")
+    Path(filename).write_text(str(data))

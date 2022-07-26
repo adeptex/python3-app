@@ -21,7 +21,7 @@ make install
 ### Module
 ```py
 import {{ cookiecutter.project_slug }}
-for item in {{ cookiecutter.project_slug }}.run("-i file.json"):
+for item in {{ cookiecutter.project_slug }}.run("-c config.yml"):
     print(item)
 ```
 

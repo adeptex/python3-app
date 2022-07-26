@@ -1,6 +1,7 @@
 from contextlib import contextmanager
 
 import pytest
+from yaml import safe_load
 
 
 @contextmanager
@@ -9,5 +10,5 @@ def does_not_raise():
 
 
 @pytest.fixture
-def rule_fixture():
-    return {}
+def config_fixture():
+    return safe_load(open("tests/fixtures/config.yml"))

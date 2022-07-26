@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 from importlib import import_module
 
-install_requires = []
+install_requires = ["yaml"]
 
 dev_requires = [
     "autoflake~=1.4",
@@ -12,10 +12,7 @@ dev_requires = [
     "flake8~=3.9",
     "isort~=5.9",
     "pytest~=6.2",
-    "pytest-mock~=3.6",
-    "pip-tools~=6.2",
-    "wheel~=0.37",
-    "twine~=3.4",
+    "pip-tools~=6.2"
 ]
 
 
@@ -26,7 +23,7 @@ def get_version():
 setup(
     name="{{ cookiecutter.project_slug }}",
     version=get_version(),
-    url="https://github.com/adeptex/{{ cookiecutter.project_slug }}",
+    url="https://github.com/____/{{ cookiecutter.project_slug }}",
     author="{{ cookiecutter.author }}",
     author_email="{{ cookiecutter.email }}",
     description="",

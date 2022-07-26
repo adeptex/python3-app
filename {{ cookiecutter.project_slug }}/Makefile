@@ -53,14 +53,4 @@ freeze-upgrade:
 		--upgrade \
 		setup.py
 
-publish:
-	python3 setup.py sdist bdist_wheel
-	twine upload --skip-existing dist/*
-
-test-pip:
-	python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps "{{ cookiecutter.project_slug }}"
-
-run:
-	python3 "{{ cookiecutter.project_slug }}/main.py"
-
-.PHONY: install install-dev isort-lint black-lint flake8-lint format lint unit coverage test publish run freeze freeze-upgrade
+.PHONY: install install-dev isort-lint black-lint flake8-lint format lint unit coverage test freeze freeze-upgrade
