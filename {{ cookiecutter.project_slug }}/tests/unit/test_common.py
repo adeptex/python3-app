@@ -1,7 +1,5 @@
 from datetime import datetime
 
-import pytest
-
 from {{cookiecutter.project_slug}}.common import today
 
 
