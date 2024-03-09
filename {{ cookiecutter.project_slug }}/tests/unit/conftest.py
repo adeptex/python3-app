@@ -11,4 +11,4 @@ def does_not_raise():
 
 @pytest.fixture
 def config_fixture():
-    return safe_load(open("tests/fixtures/config.yml"))
+    return safe_load(open("tests/fixtures/fixture.json"))

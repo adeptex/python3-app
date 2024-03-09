@@ -9,8 +9,6 @@ from {{cookiecutter.project_slug}}.__version__ import __version__
 def argument_parser() -> ArgumentParser:  # pragma: no cover
     """CLI argument parser"""
     args_parser = ArgumentParser("{{ cookiecutter.project_slug }}", description=("{{ cookiecutter.project_slug }}"))
-    args_parser.add_argument("-c", "--config", default=None, help="config filename")
-    args_parser.add_argument("-o", "--output", default=None, help="output filename")
     args_parser.add_argument("-l", "--log", default=None, help="log filename")
     args_parser.add_argument(
         "--debug",
