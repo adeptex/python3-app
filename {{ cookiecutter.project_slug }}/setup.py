@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 from importlib import import_module
 
-install_requires = ["yaml"]
+install_requires = []
 
 dev_requires = [
     "autoflake~=1.4",
@@ -22,7 +22,7 @@ def get_version():
 setup(
     name="{{ cookiecutter.project_slug }}",
     version=get_version(),
-    url="https://github.com/____/{{ cookiecutter.project_slug }}",
+    url="{{ cookiecutter.project_slug }}",
     author="{{ cookiecutter.author }}",
     author_email="{{ cookiecutter.email }}",
     description="",
