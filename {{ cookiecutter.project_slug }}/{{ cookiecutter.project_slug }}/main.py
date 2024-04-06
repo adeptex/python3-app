@@ -1,24 +1,20 @@
-import logging
-from argparse import Namespace
-from typing import Iterable
+from logging import info
+from sys import argv
+from typing import List
 
 from {{cookiecutter.project_slug}}.__version__ import __version__
 from {{cookiecutter.project_slug}}.args import parse_args
 
 
-def main() -> None:  # pragma: no cover
+def main(arguments: List = argv[1:]) -> None:
     """Main entry point"""
-    args = parse_args()
-    logging.info(f"{{cookiecutter.project_name}} v{__version__}")
+    args = parse_args(arguments)
 
-    [*map(print, run(args))]
+    info(f"{{cookiecutter.project_name}} v{__version__}")
 
-    logging.info(f"{{cookiecutter.project_name}} v{__version__} done")
+    [*map(print, args)]
 
-
-def run(args: Namespace) -> Iterable:
-    """Main worker process"""
-    yield from range(10)
+    info(f"{{cookiecutter.project_name}} v{__version__} done")
 
 
 if __name__ == "__main__":

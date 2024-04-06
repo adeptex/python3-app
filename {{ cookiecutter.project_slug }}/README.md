@@ -1,7 +1,5 @@
 # {{ cookiecutter.project_slug }}
 
-![](coverage.svg)
-
 Python3 app **{{ cookiecutter.project_slug }}**
 
 
@@ -21,7 +19,7 @@ make install
 ### Module
 ```py
 import {{ cookiecutter.project_slug }}
-for item in {{ cookiecutter.project_slug }}.run("-c config.yml"):
+for item in {{ cookiecutter.project_slug }}.run("-l log.txt --debug"):
     print(item)
 ```
 
@@ -29,5 +27,5 @@ for item in {{ cookiecutter.project_slug }}.run("-c config.yml"):
 
 ```bash
 make install-dev
-make test
+make format test
 ```

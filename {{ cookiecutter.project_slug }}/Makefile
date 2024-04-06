@@ -32,25 +32,4 @@ coverage:
 test: 
 	make lint coverage
 
-freeze:
-	CUSTOM_COMPILE_COMMAND="make freeze" \
-	pip-compile \
-		--no-emit-index-url \
-		--output-file requirements.txt \
-		--no-annotate \
-		--strip-extras \
-		--no-allow-unsafe \
-		setup.py
-
-freeze-upgrade:
-	CUSTOM_COMPILE_COMMAND="make freeze-upgrade" \
-	pip-compile \
-		--no-emit-index-url \
-		--output-file requirements.txt \
-		--no-annotate \
-		--strip-extras \
-		--no-allow-unsafe \
-		--upgrade \
-		setup.py
-
-.PHONY: install install-dev isort-lint black-lint flake8-lint format lint unit coverage test freeze freeze-upgrade
+.PHONY: install install-dev isort-lint black-lint flake8-lint format lint unit coverage test

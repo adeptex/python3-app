@@ -5,10 +5,12 @@ install_requires = []
 
 dev_requires = [
     "autoflake~=1.4",
-    "autopep8~=1.5",
-    "black~=22.6",
+    "autopep8~=1.7",
+    "black==22.8; python_version <= '3.6'",
+    "black~=24.3; python_version > '3.6'",
+    "build~=1.1",
     "coverage~=6.4",
-    "flake8~=3.9",
+    "flake8~=5.0",
     "isort~=5.9",
     "pytest~=7.1",
     "pip-tools~=6.2"
@@ -25,7 +27,7 @@ setup(
     url="{{ cookiecutter.project_slug }}",
     author="{{ cookiecutter.author }}",
     author_email="{{ cookiecutter.email }}",
-    description="",
+    description="{{ cookiecutter.project_slug }}",
     long_description="",
     long_description_content_type="text/markdown",
     packages=find_packages(exclude=("tests", "tests.*")),
